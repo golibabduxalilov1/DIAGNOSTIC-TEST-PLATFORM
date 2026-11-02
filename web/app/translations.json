@@ -1,0 +1,1058 @@
+{
+  "Til": [
+    "Язык",
+    "Language"
+  ],
+  "Qorong‘i rejim": [
+    "Тёмная тема",
+    "Dark mode"
+  ],
+  "Yorug‘ rejim": [
+    "Светлая тема",
+    "Light mode"
+  ],
+  "Ko‘rinish sozlamalari": [
+    "Настройки вида",
+    "Appearance settings"
+  ],
+  "Sizga mos ko‘rinish": [
+    "Ваш интерфейс",
+    "Make it yours"
+  ],
+  "Rang rejimi": [
+    "Цветовая тема",
+    "Color theme"
+  ],
+  "Qorong‘i": [
+    "Тёмная",
+    "Dark"
+  ],
+  "Yorug‘": [
+    "Светлая",
+    "Light"
+  ],
+  "Qurilmaga mos": [
+    "Как на устройстве",
+    "System"
+  ],
+  "Ixcham ko‘rinish": [
+    "Компактный вид",
+    "Compact layout"
+  ],
+  "Yirik matn": [
+    "Крупный текст",
+    "Larger text"
+  ],
+  "Tanlovingiz shu qurilmada saqlanadi.": [
+    "Выбор сохраняется на этом устройстве.",
+    "Your preferences stay on this device."
+  ],
+  "Bosh sahifa": [
+    "Обзор",
+    "Overview"
+  ],
+  "Sayt": [
+    "Сайт",
+    "Website"
+  ],
+  "Telegram bot": [
+    "Telegram-бот",
+    "Telegram bot"
+  ],
+  "Jamoa": [
+    "Команда",
+    "Team"
+  ],
+  "Adminlar": [
+    "Администраторы",
+    "Administrators"
+  ],
+  "Savollar": [
+    "Вопросы",
+    "Questions"
+  ],
+  "Sayt sozlamalari": [
+    "Настройки сайта",
+    "Website settings"
+  ],
+  "Natijalar": [
+    "Результаты",
+    "Results"
+  ],
+  "Mijozlar": [
+    "Клиенты",
+    "Customers"
+  ],
+  "Buyurtmalar": [
+    "Заказы",
+    "Orders"
+  ],
+  "Xabarlar": [
+    "Рассылки",
+    "Broadcasts"
+  ],
+  "Bot sozlamalari": [
+    "Настройки бота",
+    "Bot settings"
+  ],
+  "Bot ulanishi": [
+    "Подключение бота",
+    "Bot connection"
+  ],
+  "Ish maydoni": [
+    "Рабочее пространство",
+    "Workspace"
+  ],
+  "Xush kelibsiz.": [
+    "Добро пожаловать.",
+    "Welcome back."
+  ],
+  "Bugun nimadan boshlaymiz?": [
+    "С чего начнём сегодня?",
+    "Where shall we start today?"
+  ],
+  "Barcha kerakli bo‘limlar bir joyda.": [
+    "Всё необходимое в одном месте.",
+    "Everything you need, in one place."
+  ],
+  "Bo‘limlarni qidirish…": [
+    "Найти раздел…",
+    "Find a section…"
+  ],
+  "Savollarni qidirish…": [
+    "Найти вопрос…",
+    "Search questions…"
+  ],
+  "Ism, telefon yoki ID bo‘yicha qidirish…": [
+    "Поиск по имени, телефону или ID…",
+    "Search name, phone or ID…"
+  ],
+  "Hech narsa topilmadi.": [
+    "Ничего не найдено.",
+    "No matches found."
+  ],
+  "Tezkor amallar": [
+    "Быстрые действия",
+    "Quick actions"
+  ],
+  "Ochish": [
+    "Открыть",
+    "Open"
+  ],
+  "Saytni ko‘rish": [
+    "Открыть сайт",
+    "View website"
+  ],
+  "Tizimdan chiqish": [
+    "Выйти",
+    "Sign out"
+  ],
+  "Saqlangan": [
+    "Сохранено",
+    "Saved"
+  ],
+  "Saqlanmagan": [
+    "Не сохранено",
+    "Unsaved"
+  ],
+  "Saqlash": [
+    "Сохранить",
+    "Save changes"
+  ],
+  "Saqlanmoqda…": [
+    "Сохранение…",
+    "Saving…"
+  ],
+  "Yuklanmoqda…": [
+    "Загрузка…",
+    "Loading…"
+  ],
+  "Qayta urinish": [
+    "Повторить",
+    "Try again"
+  ],
+  "Bekor qilish": [
+    "Отмена",
+    "Cancel"
+  ],
+  "Tahrirlash": [
+    "Изменить",
+    "Edit"
+  ],
+  "Faol": [
+    "Активен",
+    "Active"
+  ],
+  "Nofaol": [
+    "Отключён",
+    "Inactive"
+  ],
+  "Asosiy admin": [
+    "Владелец",
+    "Owner"
+  ],
+  "Yangi admin": [
+    "Новый администратор",
+    "New administrator"
+  ],
+  "Admin qo‘shish": [
+    "Добавить администратора",
+    "Add administrator"
+  ],
+  "Adminni tahrirlash": [
+    "Изменить администратора",
+    "Edit administrator"
+  ],
+  "Ism": [
+    "Имя",
+    "Name"
+  ],
+  "Telefon raqam": [
+    "Номер телефона",
+    "Phone number"
+  ],
+  "Parol": [
+    "Пароль",
+    "Password"
+  ],
+  "Telegram ID": [
+    "Telegram ID",
+    "Telegram ID"
+  ],
+  "Kirish huquqlari": [
+    "Права доступа",
+    "Access permissions"
+  ],
+  "Saytga kirish": [
+    "Доступ к сайту",
+    "Website access"
+  ],
+  "Botga kirish": [
+    "Доступ к боту",
+    "Bot access"
+  ],
+  "Cheklangan": [
+    "Ограничен",
+    "Restricted"
+  ],
+  "To‘liq ruxsat": [
+    "Полный доступ",
+    "Full access"
+  ],
+  "Operator": [
+    "Оператор",
+    "Operator"
+  ],
+  "Kontent muharriri": [
+    "Редактор контента",
+    "Content editor"
+  ],
+  "Maxsus": [
+    "Настроить",
+    "Custom"
+  ],
+  "Hammasini tanlash": [
+    "Выбрать всё",
+    "Select all"
+  ],
+  "Barchasi": [
+    "Все",
+    "All"
+  ],
+  "Hisob faol": [
+    "Аккаунт активен",
+    "Account active"
+  ],
+  "Bo‘sh qoldirilsa parol o‘zgarmaydi.": [
+    "Оставьте пустым, чтобы сохранить пароль.",
+    "Leave blank to keep the current password."
+  ],
+  "Kamida 12 belgi": [
+    "Минимум 12 символов",
+    "At least 12 characters"
+  ],
+  "Sayt uchun telefon va parol, bot uchun Telegram ID kiriting.": [
+    "Для сайта — телефон и пароль, для бота — Telegram ID.",
+    "Use phone and password for the website, Telegram ID for the bot."
+  ],
+  "Admin saqlandi.": [
+    "Администратор сохранён.",
+    "Administrator saved."
+  ],
+  "Huquqlar darhol kuchga kiradi.": [
+    "Права применяются сразу.",
+    "Permission changes take effect immediately."
+  ],
+  "Savollarni tahrirlash": [
+    "Редактирование вопросов",
+    "Edit quiz questions"
+  ],
+  "Matnlar va tarjimalar": [
+    "Тексты и переводы",
+    "Content and translations"
+  ],
+  "Test natijalarini ko‘rish": [
+    "Просмотр результатов",
+    "View quiz results"
+  ],
+  "Bot mijozlarini ko‘rish": [
+    "Просмотр клиентов бота",
+    "View bot customers"
+  ],
+  "Cheklar va yetkazish": [
+    "Чеки и доставка",
+    "Receipts and shipping"
+  ],
+  "Ommaviy xabar yuborish": [
+    "Массовая рассылка",
+    "Send broadcasts"
+  ],
+  "Mahsulot va to‘lov sozlamalari": [
+    "Товары и оплата",
+    "Products and payment settings"
+  ],
+  "Token va bot ulanishi": [
+    "Токен и подключение бота",
+    "Token and bot connection"
+  ],
+  "Adminlar va huquqlarni boshqarish": [
+    "Управление администраторами",
+    "Manage administrators and permissions"
+  ],
+  "Shaxsiy kirish": [
+    "Личный вход",
+    "Your account"
+  ],
+  "Telefon va parol bilan tizimga kiring.": [
+    "Войдите по телефону и паролю.",
+    "Sign in with your phone and password."
+  ],
+  "Tizimga kirish": [
+    "Войти",
+    "Sign in"
+  ],
+  "Tekshirilmoqda…": [
+    "Проверка…",
+    "Checking…"
+  ],
+  "Testga qaytish": [
+    "Вернуться к тесту",
+    "Back to the quiz"
+  ],
+  "Siz uchun ajratilgan bo‘limlar": [
+    "Доступные вам разделы",
+    "Your available sections"
+  ],
+  "Ruxsat yo‘q": [
+    "Нет доступа",
+    "Access unavailable"
+  ],
+  "Hozircha sizga bo‘limlar ajratilmagan. Asosiy admin bilan bog‘laning.": [
+    "У вас пока нет доступных разделов. Обратитесь к владельцу.",
+    "No sections have been assigned yet. Contact the owner."
+  ],
+  "Savollar kutubxonasi": [
+    "Библиотека вопросов",
+    "Question library"
+  ],
+  "Savol qo‘shish": [
+    "Добавить вопрос",
+    "Add question"
+  ],
+  "Yangi savol": [
+    "Новый вопрос",
+    "New question"
+  ],
+  "Savol matni": [
+    "Текст вопроса",
+    "Question text"
+  ],
+  "Savol turi": [
+    "Тип вопроса",
+    "Question type"
+  ],
+  "Ball beruvchi": [
+    "С баллами",
+    "Scored"
+  ],
+  "Kategoriya": [
+    "Категория",
+    "Category"
+  ],
+  "Javob variantlari": [
+    "Варианты ответа",
+    "Answer options"
+  ],
+  "Variant qo‘shish": [
+    "Добавить вариант",
+    "Add option"
+  ],
+  "Ball": [
+    "Балл",
+    "Score"
+  ],
+  "Kalit": [
+    "Ключ",
+    "Key"
+  ],
+  "Yuqoriga": [
+    "Выше",
+    "Move up"
+  ],
+  "Pastga": [
+    "Ниже",
+    "Move down"
+  ],
+  "Savolni o‘chirish": [
+    "Удалить вопрос",
+    "Delete question"
+  ],
+  "Savol o‘chirilsinmi?": [
+    "Удалить вопрос?",
+    "Delete this question?"
+  ],
+  "Tarjima kiritilmasa o‘zbekcha matn ko‘rsatiladi.": [
+    "Без перевода отображается узбекский текст.",
+    "Uzbek content is used when a translation is missing."
+  ],
+  "Asosiy sozlamalar": [
+    "Основные настройки",
+    "General settings"
+  ],
+  "Brend nomi": [
+    "Название бренда",
+    "Brand name"
+  ],
+  "Kirish sarlavhasi": [
+    "Заголовок",
+    "Welcome title"
+  ],
+  "Kirish tavsifi": [
+    "Описание",
+    "Welcome description"
+  ],
+  "Yakuniy sarlavha": [
+    "Итоговый заголовок",
+    "Completion title"
+  ],
+  "Yakuniy tavsif": [
+    "Итоговое описание",
+    "Completion description"
+  ],
+  "Taxminiy vaqt (daqiqa)": [
+    "Время (минуты)",
+    "Estimated time (minutes)"
+  ],
+  "O‘zgarishlar saqlandi.": [
+    "Изменения сохранены.",
+    "Changes saved."
+  ],
+  "Sana va vaqt": [
+    "Дата и время",
+    "Date and time"
+  ],
+  "Ism / Telefon": [
+    "Имя / Телефон",
+    "Name / Phone"
+  ],
+  "Yo‘nalish": [
+    "Направление",
+    "Category"
+  ],
+  "Test versiyasi": [
+    "Версия теста",
+    "Quiz version"
+  ],
+  "Hozircha natijalar yo‘q.": [
+    "Пока нет результатов.",
+    "No results yet."
+  ],
+  "Natijalarni qidirish…": [
+    "Поиск результатов…",
+    "Search results…"
+  ],
+  "Savollar soni": [
+    "Количество вопросов",
+    "Questions"
+  ],
+  "Jami natijalar": [
+    "Всего результатов",
+    "Total results"
+  ],
+  "Jamoa a’zolari": [
+    "Участники команды",
+    "Team members"
+  ],
+  "Daqiqa": [
+    "Минуты",
+    "Minutes"
+  ],
+  "birinchi qadam.": [
+    "первый шаг.",
+    "the first step."
+  ],
+  "O‘zingiz uchun vaqt": [
+    "Время для себя",
+    "Time for yourself"
+  ],
+  "DIAGNOSTIKA": [
+    "ДИАГНОСТИКА",
+    "SELF-ASSESSMENT"
+  ],
+  "Birinchi qadam yuklanmoqda…": [
+    "Загружаем первый шаг…",
+    "Your first step is loading…"
+  ],
+  "Ulanishni tekshiring": [
+    "Проверьте подключение",
+    "Check your connection"
+  ],
+  "Boshlash": [
+    "Начать",
+    "Get started"
+  ],
+  "ta savol": [
+    "вопросов",
+    "questions"
+  ],
+  "daqiqa": [
+    "минут",
+    "minutes"
+  ],
+  "Shaxsiy tahlil": [
+    "Личный анализ",
+    "Personal insights"
+  ],
+  "O‘ZINGIZGA ROSTGO‘Y BO‘LING": [
+    "БУДЬТЕ ЧЕСТНЫ С СОБОЙ",
+    "BE HONEST WITH YOURSELF"
+  ],
+  "Sizga eng mos javobni tanlang.": [
+    "Выберите наиболее подходящий ответ.",
+    "Choose the answer that feels most like you."
+  ],
+  "Javoblar saqlanmoqda…": [
+    "Сохраняем ответы…",
+    "Saving your answers…"
+  ],
+  "TEST YAKUNLANDI": [
+    "ТЕСТ ЗАВЕРШЁН",
+    "QUIZ COMPLETE"
+  ],
+  "Natijani Telegram’da olish": [
+    "Получить результат в Telegram",
+    "Get results in Telegram"
+  ],
+  "Testni qayta topshirish": [
+    "Пройти ещё раз",
+    "Take the quiz again"
+  ],
+  "Telegram botda natijangiz va keyingi qadamlaringiz bilan tanishing.": [
+    "Посмотрите результаты и следующие шаги в Telegram.",
+    "See your results and next steps in Telegram."
+  ],
+  "Javoblaringiz saqlandi.": [
+    "Ваши ответы сохранены.",
+    "Your answers are saved."
+  ],
+  "HAR BIR O‘ZGARISH BIR QADAMDAN BOSHLANADI.": [
+    "ПЕРЕМЕНЫ НАЧИНАЮТСЯ С ОДНОГО ШАГА.",
+    "EVERY CHANGE STARTS WITH ONE STEP."
+  ],
+  "Boshqaruv": [
+    "Управление",
+    "Administration"
+  ],
+  "Orqaga": [
+    "Назад",
+    "Back"
+  ],
+  "Test jarayoni": [
+    "Ход теста",
+    "Quiz progress"
+  ],
+  "Davom etish": [
+    "Продолжить",
+    "Continue"
+  ],
+  "Boshlangan test topildi.": [
+    "Найден незавершённый тест.",
+    "You have a quiz in progress."
+  ],
+  "Qaytadan boshlash": [
+    "Начать заново",
+    "Start over"
+  ],
+  "Yangilash ↻": [
+    "Обновить ↻",
+    "Refresh ↻"
+  ],
+  "Bot tokeni sozlanmagan": [
+    "Токен бота не задан",
+    "Bot token not configured"
+  ],
+  "Bot ulanmoqda…": [
+    "Бот подключается…",
+    "Connecting bot…"
+  ],
+  "Ulanish va adminlar": [
+    "Подключение и администраторы",
+    "Connection and admins"
+  ],
+  "Buyurtmalar va cheklar": [
+    "Заказы и чеки",
+    "Orders and receipts"
+  ],
+  "Foydalanuvchilar va ballar": [
+    "Пользователи и баллы",
+    "Users and scores"
+  ],
+  "Bot foydalanuvchilari": [
+    "Пользователи бота",
+    "Bot users"
+  ],
+  "Chek tekshiruvi": [
+    "Проверка чеков",
+    "Receipt review"
+  ],
+  "PDF kundalik": [
+    "PDF-дневник",
+    "PDF journal"
+  ],
+  "Yuklangan": [
+    "Загружен",
+    "Uploaded"
+  ],
+  "Yuklanmagan": [
+    "Не загружен",
+    "Not uploaded"
+  ],
+  "Bot tokeni": [
+    "Токен бота",
+    "Bot token"
+  ],
+  "Sayt manzili": [
+    "Адрес сайта",
+    "Website URL"
+  ],
+  "Ulanishni saqlash": [
+    "Сохранить подключение",
+    "Save connection"
+  ],
+  "Botning o‘zidan boshqarish": [
+    "Управление из бота",
+    "Manage from the bot"
+  ],
+  "To‘lov chekini ochish ↗": [
+    "Открыть чек ↗",
+    "Open payment receipt ↗"
+  ],
+  "✓ To‘lovni tasdiqlash": [
+    "✓ Подтвердить оплату",
+    "✓ Approve payment"
+  ],
+  "Rad etish": [
+    "Отклонить",
+    "Reject"
+  ],
+  "Buyurtmani bekor qilish": [
+    "Отменить заказ",
+    "Cancel order"
+  ],
+  "Sotuv va aloqa sozlamalari": [
+    "Продажи и контакты",
+    "Sales and contact settings"
+  ],
+  "Bot sozlamalarini saqlash": [
+    "Сохранить настройки бота",
+    "Save bot settings"
+  ],
+  "Barchaga xabar yuborish": [
+    "Рассылка всем",
+    "Send a broadcast"
+  ],
+  "Xabar matni": [
+    "Текст сообщения",
+    "Message text"
+  ],
+  "Qoralama yaratish": [
+    "Создать черновик",
+    "Create draft"
+  ],
+  "Hammaga yuborish": [
+    "Отправить всем",
+    "Send to everyone"
+  ],
+  "Yuborilmagan xabarlar": [
+    "Неотправленные сообщения",
+    "Failed messages"
+  ],
+  "Qayta yuborish": [
+    "Отправить повторно",
+    "Retry delivery"
+  ],
+  "Manzil kutilmoqda": [
+    "Ожидаем адрес",
+    "Awaiting address"
+  ],
+  "Chek kutilmoqda": [
+    "Ожидаем чек",
+    "Awaiting receipt"
+  ],
+  "Tekshirish kerak": [
+    "Нужна проверка",
+    "Needs review"
+  ],
+  "Tasdiqlangan": [
+    "Подтверждён",
+    "Approved"
+  ],
+  "Rad etilgan": [
+    "Отклонён",
+    "Rejected"
+  ],
+  "Jo‘natilgan": [
+    "Отправлен",
+    "Shipped"
+  ],
+  "Bekor qilingan": [
+    "Отменён",
+    "Cancelled"
+  ],
+  "Barcha holatlar": [
+    "Все статусы",
+    "All statuses"
+  ],
+  "PDF kundalik narxi (so‘m)": [
+    "Цена PDF-дневника (сум)",
+    "PDF journal price (UZS)"
+  ],
+  "Bosma kundalik narxi (so‘m)": [
+    "Цена печатного дневника (сум)",
+    "Printed journal price (UZS)"
+  ],
+  "To‘lov kartasi / rekvizitlar va ko‘rsatma": [
+    "Реквизиты и инструкция по оплате",
+    "Payment details and instructions"
+  ],
+  "Yetkazish narxi va tartibi": [
+    "Стоимость и условия доставки",
+    "Delivery cost and details"
+  ],
+  "Yordam: telefon, Telegram yoki matn": [
+    "Помощь: телефон, Telegram или текст",
+    "Support: phone, Telegram or text"
+  ],
+  "variant": [
+    "вариантов",
+    "options"
+  ],
+  "Savolni tanlang va tahrirlang.": [
+    "Выберите вопрос для редактирования.",
+    "Choose a question to edit."
+  ],
+  "— SAVOL": [
+    "— ВОПРОС",
+    "— QUESTION"
+  ],
+  "Savolni tahrirlash": [
+    "Редактирование вопроса",
+    "Edit question"
+  ],
+  "Ball beruvchi savol": [
+    "Вопрос с баллами",
+    "Scored question"
+  ],
+  "Kategoriya savoli": [
+    "Вопрос-категория",
+    "Category question"
+  ],
+  "Savol tartibi": [
+    "Порядок вопроса",
+    "Question order"
+  ],
+  "↑ Yuqoriga": [
+    "↑ Выше",
+    "↑ Move up"
+  ],
+  "↓ Pastga": [
+    "↓ Ниже",
+    "↓ Move down"
+  ],
+  "-variant matni": [
+    " — текст варианта",
+    " — option text"
+  ],
+  "+ Javob varianti qo‘shish": [
+    "+ Добавить вариант ответа",
+    "+ Add answer option"
+  ],
+  "O‘zgarishlar saqlashdan so‘ng kuchga kiradi.": [
+    "Изменения вступят в силу после сохранения.",
+    "Changes take effect after saving."
+  ],
+  "Telegram boshqaruvi yuklanmoqda…": [
+    "Загрузка управления Telegram…",
+    "Loading Telegram management…"
+  ],
+  "Yangilash": [
+    "Обновить",
+    "Refresh"
+  ],
+  "BotFather tokenini kiriting. Saqlashda token Telegram orqali tekshiriladi va bot avtomatik ulanadi.": [
+    "Введите токен BotFather. При сохранении он проверяется через Telegram, и бот подключается автоматически.",
+    "Enter your BotFather token. It is verified with Telegram and the bot connects automatically."
+  ],
+  "Saqlangan token ko‘rsatilmaydi. Bo‘sh qoldirsangiz mavjud token saqlanadi.": [
+    "Сохранённый токен не отображается. Оставьте поле пустым, чтобы его не менять.",
+    "The saved token is never shown. Leave this blank to keep it."
+  ],
+  "Adminlar va huquqlarni boshqarish ↗": [
+    "Администраторы и права доступа ↗",
+    "Manage administrators and permissions ↗"
+  ],
+  "/admin — boshqaruv buyruqlari": [
+    "/admin — команды управления",
+    "/admin — management commands"
+  ],
+  "/admin_add 123456789 — yangi admin qo‘shish": [
+    "/admin_add 123456789 — добавить оператора",
+    "/admin_add 123456789 — add an operator"
+  ],
+  "/admin_remove 123456789 — adminni olib tashlash": [
+    "/admin_remove 123456789 — убрать доступ к боту",
+    "/admin_remove 123456789 — remove bot access"
+  ],
+  "/admins — adminlar ro‘yxati": [
+    "/admins — список администраторов",
+    "/admins — administrator list"
+  ],
+  "/token — shu botning yangi tokenini kiritish": [
+    "/token — обновить токен этого бота",
+    "/token — update this bot’s token"
+  ],
+  "Bu buyruqlar faqat mavjud Telegram adminlarga ishlaydi. Adminlar alohida Adminlar bo‘limida boshqariladi.": [
+    "Команды доступны администраторам с нужными правами. Управление аккаунтами — в разделе «Администраторы».",
+    "Commands require the corresponding permission. Manage accounts in Administrators."
+  ],
+  "Hozircha buyurtmalar yo‘q. Bot orqali berilgan buyurtmalar shu yerga tushadi.": [
+    "Пока нет заказов. Заказы из бота появятся здесь.",
+    "No orders yet. Orders from the bot will appear here."
+  ],
+  "kundalik": [
+    "дневник",
+    "journal"
+  ],
+  "so‘m": [
+    "сум",
+    "UZS"
+  ],
+  "Yetkazish manzili:": [
+    "Адрес доставки:",
+    "Delivery address:"
+  ],
+  "Jo‘natish:": [
+    "Отправка:",
+    "Shipping:"
+  ],
+  "PDF yetkazilishi:": [
+    "Доставка PDF:",
+    "PDF delivery:"
+  ],
+  "Jo‘natildi — mijozga xabar berish": [
+    "Отправлено — уведомить клиента",
+    "Mark shipped and notify customer"
+  ],
+  "Foydalanuvchilar ·": [
+    "Пользователи ·",
+    "Users ·"
+  ],
+  "Oxirgi 300 ta": [
+    "Последние 300",
+    "Latest 300"
+  ],
+  "Ism / Telegram": [
+    "Имя / Telegram",
+    "Name / Telegram"
+  ],
+  "Telefon": [
+    "Телефон",
+    "Phone"
+  ],
+  "Oxirgi ball": [
+    "Последний балл",
+    "Latest score"
+  ],
+  "Holati": [
+    "Статус",
+    "Status"
+  ],
+  "Foydalanuvchilar botda Start bosgach shu yerda ko‘rinadi.": [
+    "Пользователи появятся после запуска бота.",
+    "Users appear here after starting the bot."
+  ],
+  "Narx 0 bo‘lsa mahsulot savdosi yopiq. PDF uchun fayl ham yuklangan bo‘lishi kerak.": [
+    "При цене 0 продажи выключены. Для PDF также нужно загрузить файл.",
+    "A price of 0 disables sales. PDF sales also require an uploaded file."
+  ],
+  "PDF yuklash va Telegram admin": [
+    "Загрузка PDF и доступ к боту",
+    "PDF upload and bot access"
+  ],
+  "Botga /id yuboring. Chiqqan ID ni Adminlar bo‘limiga kiriting. Mavjud Telegram admin botda /admin_add ID buyrug‘i bilan ham admin qo‘sha oladi.": [
+    "Отправьте боту /id и добавьте ID в разделе «Администраторы». Администратор с нужными правами может добавить оператора командой /admin_add ID.",
+    "Send /id to the bot and add your ID in Administrators. An authorized admin can also use /admin_add ID."
+  ],
+  "Admin hisobidan telefonni ulashing, keyin /pdf yuborib PDF faylini document sifatida jo‘nating. Shu fayl tasdiqlangan PDF xaridlariga avtomatik yuboriladi.": [
+    "Поделитесь телефоном из аккаунта администратора, отправьте /pdf, затем PDF как документ. Этот файл отправляется после подтверждения покупки.",
+    "Share your phone from an authorized admin account, send /pdf, then upload the PDF as a document. This file is sent after purchase approval."
+  ],
+  "Foydalanuvchilar ochadigan sayt manzilini Bot ulanishi bo‘limida sozlang. Token serverda shifrlangan holda saqlanadi.": [
+    "Укажите адрес сайта в разделе подключения бота. Токен хранится на сервере в зашифрованном виде.",
+    "Set your public website URL in Bot connection. Tokens are encrypted on the server."
+  ],
+  "Telefonini ulashgan faol foydalanuvchilarga yuboriladi. Avval qoralama yarating, keyin tasdiqlang.": [
+    "Рассылка активным пользователям, поделившимся телефоном. Сначала создайте черновик, затем подтвердите.",
+    "Send to active users who shared their phone. Create a draft first, then confirm."
+  ],
+  "Video, rasm yoki tayyor post uchun admin hisobingizdan botga /broadcast yuboring, keyin bitta video yoki post jo‘nating. Qoralama quyidagi ro‘yxatda paydo bo‘ladi. Har bir albom elementi alohida xabar hisoblanadi.": [
+    "Для видео, фото или поста отправьте боту /broadcast, затем одно сообщение. Черновик появится ниже. Элементы альбома считаются отдельными сообщениями.",
+    "For a video, photo or post, send /broadcast to the bot, followed by one message. The draft appears below. Album items are separate messages."
+  ],
+  "Jami:": [
+    "Всего:",
+    "Total:"
+  ],
+  "· Yuborildi:": [
+    "· Отправлено:",
+    "· Sent:"
+  ],
+  "· Xato:": [
+    "· Ошибки:",
+    "· Failed:"
+  ],
+  "· Navbatda:": [
+    "· В очереди:",
+    "· Queued:"
+  ],
+  "ISH MAYDONI": [
+    "РАБОЧЕЕ ПРОСТРАНСТВО",
+    "WORKSPACE"
+  ],
+  "Saytni ko‘rish ↗": [
+    "Открыть сайт ↗",
+    "View website ↗"
+  ],
+  "＋ Admin qo‘shish": [
+    "＋ Добавить администратора",
+    "＋ Add administrator"
+  ],
+  "Telegram:": [
+    "Telegram:",
+    "Telegram:"
+  ],
+  "Token saqlangan. Almashtirish uchun yangisini kiriting.": [
+    "Токен сохранён. Введите новый для замены.",
+    "Token saved. Enter a new one to replace it."
+  ],
+  "BotFather bergan token": [
+    "Токен от BotFather",
+    "Token from BotFather"
+  ],
+  "Rad etish sababi (ixtiyoriy)": [
+    "Причина отказа (необязательно)",
+    "Reason for rejection (optional)"
+  ],
+  "Kuryer, kuzatuv raqami yoki yetkazish ma’lumoti": [
+    "Курьер, трек-номер или информация о доставке",
+    "Courier, tracking number or delivery details"
+  ],
+  "Ma’lumotlar yangilandi.": [
+    "Данные обновлены.",
+    "Data refreshed."
+  ],
+  "Bot sozlamalari saqlandi.": [
+    "Настройки бота сохранены.",
+    "Bot settings saved."
+  ],
+  "Ulashmagan": [
+    "Не предоставлен",
+    "Not shared"
+  ],
+  "Bot bloklangan": [
+    "Бот заблокирован",
+    "Bot blocked"
+  ],
+  "Yuborildi": [
+    "Отправлено",
+    "Sent"
+  ],
+  "Navbatda": [
+    "В очереди",
+    "Queued"
+  ],
+  "Qoralama": [
+    "Черновик",
+    "Draft"
+  ],
+  "Yuborish navbati": [
+    "В очереди",
+    "Send queue"
+  ],
+  "Matn": [
+    "Текст",
+    "Text"
+  ],
+  "Rasm": [
+    "Фото",
+    "Photo"
+  ],
+  "Fayl": [
+    "Файл",
+    "File"
+  ],
+  "(Matnsiz media)": [
+    "(Медиа без текста)",
+    "(Media without text)"
+  ],
+  "Bot ulanishi bo‘limida BotFather tokenini kiriting.": [
+    "Введите токен BotFather в разделе подключения бота.",
+    "Enter your BotFather token in Bot connection."
+  ],
+  "Saqlanmagan o‘zgarishlardan voz kechilsinmi?": [
+    "Отменить несохранённые изменения?",
+    "Discard unsaved changes?"
+  ],
+  "Telefon raqam yoki parol noto‘g‘ri.": [
+    "Неверный телефон или пароль.",
+    "Incorrect phone number or password."
+  ],
+  "Avval tizimga kiring.": [
+    "Сначала войдите в систему.",
+    "Please sign in first."
+  ],
+  "Bu bo‘lim uchun sizga ruxsat berilmagan.": [
+    "У вас нет доступа к этому разделу.",
+    "You do not have access to this section."
+  ],
+  "Birinchi variant": [
+    "Первый вариант",
+    "First option"
+  ],
+  "Ikkinchi variant": [
+    "Второй вариант",
+    "Second option"
+  ],
+  "Yangi variant": [
+    "Новый вариант",
+    "New option"
+  ],
+  "Saqlangan testni bekor qilish": [
+    "Удалить сохранённый прогресс",
+    "Discard saved quiz progress"
+  ],
+  "Bot hozircha ulanmagan. Asosiy admin bilan bog‘laning.": [
+    "Бот пока не подключён. Обратитесь к владельцу.",
+    "The bot is not connected yet. Contact the owner."
+  ]
+}

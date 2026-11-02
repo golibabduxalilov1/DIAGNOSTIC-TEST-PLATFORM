@@ -1,0 +1,8 @@
+export type Permission='site.questions'|'site.settings'|'site.results'|'bot.users'|'bot.orders'|'bot.broadcasts'|'bot.settings'|'bot.connection'|'admins.manage';
+export type AdminAccount={id:string;name:string;phone:string|null;telegramId:number|null;permissions:Permission[];active:boolean;owner:boolean;webAccess:boolean};
+export const permissionLabels:Record<Permission,string>={'site.questions':'Savollarni tahrirlash','site.settings':'Matnlar va tarjimalar','site.results':'Test natijalarini ko‘rish','bot.users':'Bot mijozlarini ko‘rish','bot.orders':'Cheklar va yetkazish','bot.broadcasts':'Ommaviy xabar yuborish','bot.settings':'Mahsulot va to‘lov sozlamalari','bot.connection':'Token va bot ulanishi','admins.manage':'Adminlar va huquqlarni boshqarish'};
+export type Opt={id:string;text:string;score:number;key?:string};
+export type Question={id:string;text:string;type:'scored'|'category';options:Opt[]};
+export type Translation={title?:string;description?:string;finishTitle?:string;finishDescription?:string;questions?:Record<string,{text?:string;options?:Record<string,string>}>};
+export type Config={version:number;brand:string;title:string;description:string;minutes:number;botUsername:string;finishTitle:string;finishDescription:string;questions:Question[];locales?:{ru?:Translation;en?:Translation}};
+export async function api(path:string,method='GET',body?:unknown){const response=await fetch('/api/admin/'+path,{method,headers:{'Content-Type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)})});const data=await response.json();if(!response.ok)throw Error(data.message||'So‘rov bajarilmadi.');return data;}

@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "brand": "STEP ONE",
+  "title": "Siz hayotingizni boshqaryapsizmi, yoki u sizni?",
+  "description": "O‘zingiz haqingizda hali bilmagan narsalaringizni bilib oling.",
+  "minutes": 3,
+  "botUsername": "",
+  "finishTitle": "Javobingiz tayyor.",
+  "finishDescription": "Natijangiz tahlil qilindi. Keyingi qadamingizni bugunoq boshlang.",
+  "questions": [
+    {
+      "id": "1",
+      "type": "scored",
+      "text": "Oxirgi 7 kun ichida necha marta kuningiz rejalashtirgandek o'tdi?",
+      "options": [
+        {
+          "text": "Har kuni",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "3–5 kun",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Deyarli bo'lmadi",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "type": "scored",
+      "text": "Oxirgi marta qachon \"Bugun juda unumli kun bo'ldi\" deb o'ylagansiz?",
+      "options": [
+        {
+          "text": "Bugun yoki kecha",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Bir necha kun/hafta oldin",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Anchadan beri bunday deb o'ylamaganman",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "type": "scored",
+      "text": "Muhim ishlarni ko'pincha qachon bajarasiz?",
+      "options": [
+        {
+          "text": "Belgilangan vaqtda",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Kechiktirib",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Oxirgi daqiqada",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "type": "scored",
+      "text": "Telefoningiz kun davomida diqqatingizni qanchalik chalg'itadi?",
+      "options": [
+        {
+          "text": "Deyarli chalg'itmaydi",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Ba'zan",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Juda ko'p",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "type": "scored",
+      "text": "O'zingizga bergan va'dalaringizni bajarasizmi?",
+      "options": [
+        {
+          "text": "Ko'pincha",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Ba'zida",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Juda kam",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "type": "scored",
+      "text": "Muhim vazifalarni unutib qo'yasizmi?",
+      "options": [
+        {
+          "text": "Juda kam",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Ba'zan",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Tez-tez",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "type": "scored",
+      "text": "Xarajatlaringiz qayerga ketayotganini bilasizmi?",
+      "options": [
+        {
+          "text": "Ha",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Taxminan",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Yo'q",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "type": "scored",
+      "text": "Oxirgi marta yangi foydali odatni qachon shakllantirdingiz?",
+      "options": [
+        {
+          "text": "So'nggi 3 oyda",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Bir yil ichida",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Eslolmayman",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "type": "category",
+      "text": "Hayotingizning qaysi qismi sizni eng ko'p qiynayapti?",
+      "options": [
+        {
+          "text": "Vaqt boshqaruvi",
+          "key": "vaqt",
+          "id": "1",
+          "score": 0
+        },
+        {
+          "text": "Maqsadlar",
+          "key": "maqsad",
+          "id": "2",
+          "score": 0
+        },
+        {
+          "text": "Moliya",
+          "key": "moliya",
+          "id": "3",
+          "score": 0
+        },
+        {
+          "text": "Fokus",
+          "key": "fokus",
+          "id": "4",
+          "score": 0
+        },
+        {
+          "text": "O'qish/Ish",
+          "key": "ish",
+          "id": "5",
+          "score": 0
+        },
+        {
+          "text": "Sog'liq",
+          "key": "sogliq",
+          "id": "6",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "type": "scored",
+      "text": "Kun oxirida o'zingizdan qoniqish hissi bilan uxlay olasizmi?",
+      "options": [
+        {
+          "text": "Ha, doim",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Ha, ba'zan",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Yo'q, kamdan-kam",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "type": "scored",
+      "text": "Oxirgi 30 kun ichida o'zingiz uchun qo'ygan nechta maqsadingizni bajardingiz?",
+      "options": [
+        {
+          "text": "Deyarli barchasini bajardim",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Yarmini yoki ayrimlarini bajardim",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Deyarli hech birini bajarmadim",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "type": "scored",
+      "text": "Agar bugungi kuningiz keyingi 365 kun davomida takrorlansa…",
+      "options": [
+        {
+          "text": "Xursand bo'lardim",
+          "score": 5,
+          "id": "1"
+        },
+        {
+          "text": "Biroz xavotirlanardim",
+          "score": 3,
+          "id": "2"
+        },
+        {
+          "text": "Juda afsuslanardim",
+          "score": 0,
+          "id": "3"
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "ru": {
+      "title": "Вы управляете своей жизнью или она вами?",
+      "description": "Узнайте о себе то, чего вы ещё не замечали.",
+      "finishTitle": "Ваш результат готов.",
+      "finishDescription": "Ваши ответы проанализированы. Сделайте следующий шаг уже сегодня.",
+      "questions": {
+        "1": {
+          "text": "Сколько раз за последние 7 дней ваш день прошёл по плану?",
+          "options": {
+            "1": "Каждый день",
+            "2": "3–5 дней",
+            "3": "Почти ни разу"
+          }
+        },
+        "2": {
+          "text": "Когда вы в последний раз думали: «Сегодня был очень продуктивный день»?",
+          "options": {
+            "1": "Сегодня или вчера",
+            "2": "Несколько дней или недель назад",
+            "3": "Давно так не думал(а)"
+          }
+        },
+        "3": {
+          "text": "Когда вы обычно выполняете важные дела?",
+          "options": {
+            "1": "В намеченное время",
+            "2": "С задержкой",
+            "3": "В последний момент"
+          }
+        },
+        "4": {
+          "text": "Как часто телефон отвлекает вас в течение дня?",
+          "options": {
+            "1": "Почти не отвлекает",
+            "2": "Иногда",
+            "3": "Очень часто"
+          }
+        },
+        "5": {
+          "text": "Выполняете ли вы обещания, данные себе?",
+          "options": {
+            "1": "Чаще всего",
+            "2": "Иногда",
+            "3": "Очень редко"
+          }
+        },
+        "6": {
+          "text": "Забываете ли вы важные задачи?",
+          "options": {
+            "1": "Очень редко",
+            "2": "Иногда",
+            "3": "Часто"
+          }
+        },
+        "7": {
+          "text": "Знаете ли вы, на что уходят ваши деньги?",
+          "options": {
+            "1": "Да",
+            "2": "Примерно",
+            "3": "Нет"
+          }
+        },
+        "8": {
+          "text": "Когда вы в последний раз сформировали полезную привычку?",
+          "options": {
+            "1": "За последние 3 месяца",
+            "2": "За последний год",
+            "3": "Не помню"
+          }
+        },
+        "9": {
+          "text": "Какая сфера жизни вызывает у вас больше всего трудностей?",
+          "options": {
+            "1": "Управление временем",
+            "2": "Цели",
+            "3": "Финансы",
+            "4": "Концентрация",
+            "5": "Учёба / работа",
+            "6": "Здоровье"
+          }
+        },
+        "10": {
+          "text": "В конце дня вы засыпаете с чувством удовлетворения собой?",
+          "options": {
+            "1": "Да, всегда",
+            "2": "Да, иногда",
+            "3": "Редко"
+          }
+        },
+        "11": {
+          "text": "Сколько своих целей вы достигли за последние 30 дней?",
+          "options": {
+            "1": "Почти все",
+            "2": "Половину или некоторые",
+            "3": "Почти ни одной"
+          }
+        },
+        "12": {
+          "text": "Если бы сегодняшний день повторялся следующие 365 дней…",
+          "options": {
+            "1": "Я был(а) бы рад(а)",
+            "2": "Я бы немного беспокоился(-ась)",
+            "3": "Я бы очень сожалел(а)"
+          }
+        }
+      }
+    },
+    "en": {
+      "title": "Are you in charge of your life, or is it in charge of you?",
+      "description": "Discover things about yourself you may not have noticed.",
+      "finishTitle": "Your results are ready.",
+      "finishDescription": "Your answers have been reviewed. Take your next step today.",
+      "questions": {
+        "1": {
+          "text": "How often did your day go as planned over the last 7 days?",
+          "options": {
+            "1": "Every day",
+            "2": "3–5 days",
+            "3": "Almost never"
+          }
+        },
+        "2": {
+          "text": "When did you last think, “Today was a really productive day”?",
+          "options": {
+            "1": "Today or yesterday",
+            "2": "A few days or weeks ago",
+            "3": "I have not thought that in a long time"
+          }
+        },
+        "3": {
+          "text": "When do you usually complete important tasks?",
+          "options": {
+            "1": "At the planned time",
+            "2": "After a delay",
+            "3": "At the last minute"
+          }
+        },
+        "4": {
+          "text": "How much does your phone distract you during the day?",
+          "options": {
+            "1": "Hardly at all",
+            "2": "Sometimes",
+            "3": "A lot"
+          }
+        },
+        "5": {
+          "text": "Do you keep the promises you make to yourself?",
+          "options": {
+            "1": "Most of the time",
+            "2": "Sometimes",
+            "3": "Very rarely"
+          }
+        },
+        "6": {
+          "text": "Do you forget important tasks?",
+          "options": {
+            "1": "Very rarely",
+            "2": "Sometimes",
+            "3": "Often"
+          }
+        },
+        "7": {
+          "text": "Do you know where your money goes?",
+          "options": {
+            "1": "Yes",
+            "2": "Roughly",
+            "3": "No"
+          }
+        },
+        "8": {
+          "text": "When did you last develop a useful habit?",
+          "options": {
+            "1": "In the last 3 months",
+            "2": "Within the last year",
+            "3": "I cannot remember"
+          }
+        },
+        "9": {
+          "text": "Which part of your life is giving you the most trouble?",
+          "options": {
+            "1": "Time management",
+            "2": "Goals",
+            "3": "Finances",
+            "4": "Focus",
+            "5": "Study / work",
+            "6": "Health"
+          }
+        },
+        "10": {
+          "text": "Do you go to sleep feeling satisfied with yourself?",
+          "options": {
+            "1": "Yes, always",
+            "2": "Yes, sometimes",
+            "3": "Rarely"
+          }
+        },
+        "11": {
+          "text": "How many of your goals did you achieve in the last 30 days?",
+          "options": {
+            "1": "Almost all of them",
+            "2": "Half or a few",
+            "3": "Almost none"
+          }
+        },
+        "12": {
+          "text": "If today repeated itself for the next 365 days…",
+          "options": {
+            "1": "I would be happy",
+            "2": "I would feel a little worried",
+            "3": "I would have deep regrets"
+          }
+        }
+      }
+    }
+  }
+}
