@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react';
 import dynamic from 'next/dynamic';
 import {api,AdminAccount,Config,Permission} from './lib';
 import {PreferenceControls,Translated,usePreferences} from '../preferences';
+import {ask,ConfirmHost} from './confirm';
 const Questions=dynamic(()=>import('./questions'),{loading:()=> <p className="empty">…</p>});
 const Accounts=dynamic(()=>import('./accounts'),{loading:()=> <p className="empty">…</p>});
 const Telegram=dynamic(()=>import('./telegram'),{loading:()=> <p className="empty">…</p>});
@@ -32,7 +33,7 @@ export default function Admin(){
  function change(fn:(c:Config)=>void){if(!config)return;const c=structuredClone(config);fn(c);C(c);D(true);M('');}
  async function login(e:React.FormEvent){e.preventDefault();B(true);E('');try{await api('login','POST',{phone,password});P('');await load();}catch(e){E((e as Error).message);}finally{B(false);}}
  async function save(){B(true);E('');try{C(await api('config','PUT',config));D(false);M('O‘zgarishlar saqlandi.');Summary(await api('summary'));}catch(e){E((e as Error).message);}finally{B(false);}}
- async function logout(){if(dirty&&!confirm(t('Saqlanmagan o‘zgarishlardan voz kechilsinmi?')))return;try{await api('logout','POST');U(null);C(null);D(false);T('overview');history.replaceState(null,'','/admin');}catch(e){E((e as Error).message);}}
+ async function logout(){if(dirty&&!await ask('Saqlanmagan o‘zgarishlardan voz kechilsinmi?',{confirmText:'Chiqish',danger:true}))return;try{await api('logout','POST');U(null);C(null);D(false);T('overview');history.replaceState(null,'','/admin');}catch(e){E((e as Error).message);}}
  if(loading)return <main className="login"><p>{t('Yuklanmoqda…')}</p></main>;
  if(!user)return <Translated><div className="auth-shell"><div className="auth-preferences"><PreferenceControls/></div><main className="login"><a className="wordmark" href="/">STEP ONE<span>Shaxsiy kirish</span></a><p className="eyebrow auth-eyebrow">ISH MAYDONI</p><h1>Xush kelibsiz.</h1><p className="muted">Telefon va parol bilan tizimga kiring.</p><form onSubmit={login}><label>Telefon raqam<input autoComplete="username" type="tel" inputMode="tel" placeholder="+998…" value={phone} onChange={e=>F(e.target.value)} maxLength={32} required/></label><label>Parol<input autoComplete="current-password" type="password" value={password} onChange={e=>P(e.target.value)} required/></label>{error&&<p className="error" role="alert">{error}</p>}<button className="primary" disabled={busy}>{busy?'Tekshirilmoqda…':'Tizimga kirish'} <span>→</span></button></form><a className="text-button" href="/">← {t('Testga qaytish')}</a></main></div></Translated>;
  const nav=allowed.filter(s=>[t(s.title),t(s.group),t(s.description)].join(' ').toLowerCase().includes(search.toLowerCase()));
@@ -47,5 +48,5 @@ export default function Admin(){
  {current.id==='accounts'&&<Accounts/>}
  {current.id.startsWith('bot-')&&<Telegram key={current.id} initialView={current.id.slice(4)} permissions={user.permissions}/>}
  {dirty&&<div className="save-dock"><span>● {t('Saqlanmagan')}</span><button className="save-button" disabled={busy} onClick={save}>{busy?'Saqlanmoqda…':'Saqlash'}</button></div>}
- </main><footer className="admin-footer"><span>STEP ONE · {new Date().getFullYear()}</span><span>{user.name} · {t(current.title)}</span></footer></div></div></Translated>;
+ </main><footer className="admin-footer"><span>STEP ONE · {new Date().getFullYear()}</span><span>{user.name} · {t(current.title)}</span></footer></div></div><ConfirmHost/></Translated>;
 }

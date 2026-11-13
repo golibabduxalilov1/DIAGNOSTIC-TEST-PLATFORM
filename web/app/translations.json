@@ -1054,5 +1054,41 @@
   "Bot hozircha ulanmagan. Asosiy admin bilan bog‘laning.": [
     "Бот пока не подключён. Обратитесь к владельцу.",
     "The bot is not connected yet. Contact the owner."
+  ],
+  "Tasdiqlang": [
+    "Подтвердите",
+    "Please confirm"
+  ],
+  "Tasdiqlash": [
+    "Подтвердить",
+    "Confirm"
+  ],
+  "Chiqish": [
+    "Выйти",
+    "Log out"
+  ],
+  "Chekni tekshirdingizmi? To‘lov tasdiqlansinmi?": [
+    "Вы проверили чек? Подтвердить оплату?",
+    "Have you checked the receipt? Confirm the payment?"
+  ],
+  "Chek rad etilsinmi?": [
+    "Отклонить чек?",
+    "Reject this receipt?"
+  ],
+  "To‘lovsiz buyurtma bekor qilinsinmi?": [
+    "Отменить неоплаченный заказ?",
+    "Cancel this unpaid order?"
+  ],
+  "Ushbu xabar telefonini ulashgan barcha faol foydalanuvchilarga yuborilsinmi?": [
+    "Отправить это сообщение всем активным пользователям, поделившимся номером?",
+    "Send this message to all active users who shared their phone number?"
+  ],
+  "Ushbu savol olib tashlansinmi? Saqlashgacha sahifani yangilab qaytarish mumkin.": [
+    "Удалить этот вопрос? До сохранения можно обновить страницу, чтобы вернуть его.",
+    "Remove this question? Until you save, you can reload the page to restore it."
+  ],
+  "To‘lovni tasdiqlash": [
+    "Подтвердить оплату",
+    "Confirm payment"
   ]
 }
