@@ -1,4 +1,8 @@
 import './style.css';
+import './light.css';
 import {PreferencesProvider} from './preferences';
-export const metadata = { title: 'STEP ONE — Diagnostika', description: 'O‘zingizni yaxshiroq anglash uchun birinchi qadam.' };
-export default function Layout({ children }: {children: React.ReactNode}) { return <html lang="uz" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html:`try{var p=JSON.parse(localStorage.getItem('stepone-preferences')||'{}');document.documentElement.dataset.theme=p.theme==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):p.theme==='light'?'light':'dark';}catch{}`}}/></head><body><PreferencesProvider>{children}</PreferencesProvider></body></html>; }
+import { connection } from 'next/server';
+export async function generateMetadata(){
+ try{const response=await fetch(`${process.env.API_URL||'http://127.0.0.1:4000'}/quiz`,{cache:'no-store',signal:AbortSignal.timeout(3000)});if(!response.ok)throw Error();const config=await response.json();return {metadataBase:new URL(process.env.SITE_URL||'https://intizomkalit.uz'),title:config.brand+' — Diagnostika',description:config.description};}catch{return {title:'Diagnostika'};}
+}
+export default async function Layout({ children }: {children: React.ReactNode}) { await connection(); return <html lang="uz" data-theme="light" suppressHydrationWarning><body><PreferencesProvider>{children}</PreferencesProvider></body></html>; }

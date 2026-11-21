@@ -1,0 +1,139 @@
+/* Soft daylight: low-glare surfaces with clear text and restrained blue accents. */
+:root[data-theme=light] {
+  color-scheme: light;
+  --bg: #e9edec;
+  --panel: #f5f6f2;
+  --surface: #eff2ee;
+  --field: #edf0ec;
+  --soft: #e3e8e4;
+  --accent-soft: #dfe8ee;
+  --line: #cdd5d1;
+  --ink: #283735;
+  --muted: #586965;
+  --blue: #365f7a;
+  --green: #197451;
+  --accent-hover: #294e67;
+  --accent-line: #adbfca;
+  --field-line: #aab9b2;
+  --success-soft: #eaf6ef;
+  --success-line: #acd6bb;
+  --warning: #855510;
+  --warning-soft: #fff6e5;
+  --warning-line: #e4c58c;
+  --danger: #b02e48;
+  --danger-soft: #fff0f3;
+  --danger-line: #e8b7c2;
+  --shadow: 0 3px 12px #28373505, 0 1px 2px #28373504;
+}
+
+/* Public quiz and authentication use the same quiet, bright canvas. */
+:root[data-theme=light] :is(.public-shell,.auth-shell) {
+  background: radial-gradient(ellipse at 50% 0%, #dce6e180 0%, transparent 65%), var(--bg);
+}
+:root[data-theme=light] :is(.public-header,.admin-header,.sidebar,.sidebar-bottom,.admin-footer,.panel-title,.editor-footer,.list-note,th,td) { border-color: var(--line); }
+:root[data-theme=light] :is(.lede,.intro-meta,.question-top,.micro,.text-button,.public-footer,.public-footer a,.admin-footer,.admin-footer span,.hint,.empty,.list-note,.section-label>span,.score-input,.question-item small,.question-item .num) { color: var(--muted); }
+:root[data-theme=light] :is(label,.field-label) { color: #40536e; }
+:root[data-theme=light] :is(.eyebrow,.overview-welcome .eyebrow) { color: var(--blue); }
+:root[data-theme=light] .intro .eyebrow span { background: linear-gradient(90deg,transparent,var(--blue)); }
+:root[data-theme=light] .question-top b { color: var(--ink); }
+:root[data-theme=light] :is(.header-note i,.live i) { background: var(--green); box-shadow: 0 0 0 3px #19745112; }
+:root[data-theme=light] ::selection { color: #183d83; background: #cddfff; }
+
+/* Opaque action colors keep white button labels readable in every state. */
+:root[data-theme=light] :is(.primary,.save-button,.confirm-primary) {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 4px 12px #285cca20;
+}
+:root[data-theme=light] :is(.primary,.save-button,.confirm-primary):hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  filter: none;
+}
+:root[data-theme=light] :is(button,a,input,textarea,select,summary):focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+:root[data-theme=light] :is(input,textarea,select) { border-color: var(--field-line); }
+:root[data-theme=light] :is(input,textarea)::placeholder { color: #65758c; opacity: 1; }
+:root[data-theme=light] :is(input,textarea,select):focus { border-color: var(--blue); box-shadow: 0 0 0 3px #285cca18; }
+:root[data-theme=light] :is(.sidebar-search,.search-field):focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px #285cca18; }
+:root[data-theme=light] :is(.sidebar-search,.search-field) input:focus { box-shadow: none; }
+:root[data-theme=light] :is(.secondary-button,.icon-button,.preferences-menu summary,.back,.order-controls button,.add-icon):hover:not(:disabled) { background: var(--accent-soft); border-color: var(--accent-line); color: var(--blue); }
+:root[data-theme=light] :is(.text-button,.preview-link,.public-footer a):hover { color: var(--blue); }
+:root[data-theme=light] .preferences-menu[open] summary { background: var(--accent-soft); color: var(--blue); border-color: var(--accent-line); }
+
+/* Navigation and editor selections share the quiz selection language. */
+:root[data-theme=light] .sidebar nav button.active { color: var(--blue); background: var(--accent-soft); border-color: var(--accent-line); }
+:root[data-theme=light] .sidebar nav small { background: #dbe7ff; color: #234f9c; }
+:root[data-theme=light] :is(.avatar,.account-avatar,.shortcut-icon) { background: var(--accent-soft); color: var(--blue); border-color: var(--accent-line); }
+:root[data-theme=light] .overview-mark { color: #9eb3ae; }
+:root[data-theme=light] .overview-welcome { background: linear-gradient(115deg,var(--panel),#dfe8e1); }
+:root[data-theme=light] .stats>div { background: var(--panel); box-shadow: var(--shadow); }
+:root[data-theme=light] :is(.stats>div>span,.stats strong small) { color: var(--muted); }
+:root[data-theme=light] :is(.stats strong.live,.status) { color: var(--green); }
+:root[data-theme=light] :is(.status.unsaved,.save-dock>span) { color: var(--warning); }
+:root[data-theme=light] .panel-title h2 small { background: var(--soft); color: var(--muted); }
+:root[data-theme=light] .question-items { scrollbar-color: var(--field-line) transparent; }
+:root[data-theme=light] .question-item { color: #40536e; }
+:root[data-theme=light] .question-item:hover { background: var(--soft); }
+:root[data-theme=light] .question-item.active { color: #234f9c; background: var(--accent-soft); border-color: var(--accent-line); }
+:root[data-theme=light] :is(.question-item.active small,.question-item.active .num) { color: var(--blue); }
+:root[data-theme=light] :is(.editor-footer,.option-edit) { background: var(--field); border-color: var(--line); }
+:root[data-theme=light] :is(.score-input input,.order-controls button,.add-icon,.option-index,.back) { background: var(--soft); border-color: var(--field-line); color: #40536e; }
+:root[data-theme=light] .score-input input { color: var(--blue); }
+:root[data-theme=light] .add-option { color: var(--blue); border-color: var(--accent-line); }
+:root[data-theme=light] .add-option:hover { background: var(--accent-soft); border-color: var(--blue); }
+:root[data-theme=light] .remove { color: var(--muted); }
+:root[data-theme=light] :is(.remove,.danger):hover { background: var(--danger-soft); color: var(--danger); }
+:root[data-theme=light] .danger { color: var(--danger); }
+:root[data-theme=light] .permission-option:has(input:checked) { border-color: var(--accent-line); }
+:root[data-theme=light] .language-tabs button.active { color: var(--blue); }
+:root[data-theme=light] .language-tabs button:hover { background: var(--soft); color: var(--blue); }
+
+:root[data-theme=light] .option { background: var(--panel); border-color: var(--field-line); color: var(--ink); box-shadow: 0 2px 5px #233e6b04; }
+:root[data-theme=light] .option:hover:not(:disabled) { background: var(--soft); border-color: var(--blue); }
+:root[data-theme=light] .option.selected { background: var(--accent-soft); border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+:root[data-theme=light] .option-dot { border-color: #8192aa; }
+:root[data-theme=light] .selected .option-dot { background: white; border-color: var(--blue); }
+:root[data-theme=light] .selected .option-index { background: var(--blue); border-color: var(--blue); color: white; }
+:root[data-theme=light] .progress i { background: #d7e0ee; }
+:root[data-theme=light] .progress .filled { background: var(--blue); }
+:root[data-theme=light] .seal { background: var(--success-soft); color: var(--green); border-color: var(--success-line); }
+:root[data-theme=light] .note { background: var(--accent-soft); color: #345580; border-color: var(--blue); }
+
+/* Results, Telegram, accounts and dialogs retain distinct semantic colors. */
+:root[data-theme=light] th { color: var(--muted); background: var(--field); }
+:root[data-theme=light] td { color: #40536e; }
+:root[data-theme=light] tbody tr:hover { background: var(--soft); }
+:root[data-theme=light] :is(.tag,.score-badge,.bot-receipt) { background: var(--accent-soft); border-color: var(--accent-line); color: #234f9c; }
+:root[data-theme=light] .bot-tabs button { background: var(--panel); border-color: var(--line); color: var(--muted); }
+:root[data-theme=light] .bot-tabs button:hover { background: var(--soft); color: var(--ink); }
+:root[data-theme=light] .bot-tabs button.active { background: var(--accent-soft); border-color: var(--accent-line); color: var(--blue); }
+:root[data-theme=light] .bot-pending { background: var(--warning-soft); color: var(--warning); border-color: var(--warning-line); }
+:root[data-theme=light] .success { background: var(--success-soft); color: var(--green); border-color: var(--success-line); }
+:root[data-theme=light] :is(.error,.bot-reject,.confirm-danger) { background: var(--danger-soft); color: var(--danger); border-color: var(--danger-line); }
+:root[data-theme=light] :is(.bot-reject,.confirm-danger):hover { background: #fbe0e7; border-color: var(--danger); }
+:root[data-theme=light] .confirm-backdrop { background: #1c294052; }
+:root[data-theme=light] .confirm-dialog { box-shadow: 0 24px 60px #233e6b26; }
+:root[data-theme=light] .confirm-icon { background: var(--accent-soft); color: var(--blue); border-color: var(--accent-line); }
+:root[data-theme=light] .danger-dialog .confirm-icon { background: var(--danger-soft); color: var(--danger); border-color: var(--danger-line); }
+
+/* Quiet chrome and readable supporting text throughout the workspace. */
+:root[data-theme=light] body { line-height: 1.55; }
+:root[data-theme=light] .refined-shell .admin-header { background: var(--surface); }
+:root[data-theme=light] :is(label,.field-label,td,.question-item) { color: var(--ink); }
+:root[data-theme=light] :is(.note,.tag,.score-badge,.bot-receipt,.question-item.active) { color: var(--blue); }
+:root[data-theme=light] :is(.sidebar nav small,.selected .option-dot) { background: var(--panel); }
+:root[data-theme=light] ::selection { color: var(--ink); background: #cbdcd3; }
+:root[data-theme=light] :is(input,textarea)::placeholder { color: #64736d; }
+:root[data-theme=light] .progress i { background: var(--line); }
+:root[data-theme=light] .option-dot { border-color: var(--field-line); }
+:root[data-theme=light] :is(.score-input input,.order-controls button,.add-icon,.option-index,.back) { color: var(--blue); }
+:root[data-theme=light] :is(.primary,.save-button,.confirm-primary) { box-shadow: 0 3px 8px #28373512; }
+:root[data-theme=light] :is(.sidebar-search input,.sidebar-profile small,.shortcut-card small,.stats>div>span,.section-title small,.question-item small,.hint,.list-note,.preferences-card small,.micro) { font-size: 12px; }
+:root[data-theme=light] :is(.shortcut-card strong,.sidebar-profile strong,.refined-shell .sidebar nav button) { font-size: 13px; }
+:root[data-theme=light] .shortcut-card { box-shadow: none; }
+:root[data-theme=light] .shortcut-card:hover { background: var(--surface); border-color: var(--accent-line); }
+:root[data-theme=light] .shortcut-icon { background: #e2e9e2; border-color: #becdc0; color: #48664e; }
+:root[data-theme=light] .refined-shell .nav-caption { font-size: 10px; letter-spacing: 1.2px; }
+:root[data-theme=light] .sidebar-search input:focus { background: transparent; }
+:root[data-theme=light] .table-scroll { scrollbar-color: var(--field-line) var(--field); }

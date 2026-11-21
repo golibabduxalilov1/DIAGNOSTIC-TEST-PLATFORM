@@ -1,0 +1,21 @@
+# Add these site blocks to the existing host Caddy configuration.
+# Do not run a second proxy competing for ports 80/443.
+intizomkalit.uz {
+    header Strict-Transport-Security "max-age=31536000"
+    encode zstd gzip
+    request_body {
+        max_size 55MB
+    }
+    handle_path /api/* {
+        reverse_proxy 127.0.0.1:4000 {
+            header_up X-Forwarded-For {remote_host}
+        }
+    }
+    handle {
+        reverse_proxy 127.0.0.1:3000
+    }
+}
+
+www.intizomkalit.uz {
+    redir https://intizomkalit.uz{uri} permanent
+}

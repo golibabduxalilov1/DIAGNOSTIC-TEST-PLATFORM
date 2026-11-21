@@ -1,1 +1,31 @@
-{"name":"@stepone/api","private":true,"scripts":{"dev":"tsx watch src/main.ts","build":"tsc","start":"node dist/main.js","test":"tsx --test src/*.test.ts"},"dependencies":{"@nestjs/common":"^11.1.0","@nestjs/core":"^11.1.0","@nestjs/platform-express":"^11.1.0","dotenv":"^17.2.0","multer":"^2.5.0","path-to-regexp":"^8.4.2","reflect-metadata":"^0.2.2","rxjs":"^7.8.2"},"devDependencies":{"@types/express":"^5.0.0","@types/node":"^24.0.0","tsx":"^4.20.0","typescript":"^5.9.0"}}
+{
+  "name": "@stepone/api",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test": "tsx --test src/*.test.ts",
+    "db:migrate": "tsx src/migrate.ts",
+    "db:import": "tsx src/import-sqlite.ts",
+    "check:access": "npm run build && node scripts/check-access.cjs"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.0",
+    "@nestjs/core": "^11.1.0",
+    "@nestjs/platform-express": "^11.1.0",
+    "dotenv": "^17.2.0",
+    "multer": "^2.5.0",
+    "path-to-regexp": "^8.4.2",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

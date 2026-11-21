@@ -311,10 +311,6 @@
     "Товары и оплата",
     "Products and payment settings"
   ],
-  "Token va bot ulanishi": [
-    "Токен и подключение бота",
-    "Token and bot connection"
-  ],
   "Adminlar va huquqlarni boshqarish": [
     "Управление администраторами",
     "Manage administrators and permissions"
@@ -587,10 +583,6 @@
     "Обновить ↻",
     "Refresh ↻"
   ],
-  "Bot tokeni sozlanmagan": [
-    "Токен бота не задан",
-    "Bot token not configured"
-  ],
   "Bot ulanmoqda…": [
     "Бот подключается…",
     "Connecting bot…"
@@ -626,10 +618,6 @@
   "Yuklanmagan": [
     "Не загружен",
     "Not uploaded"
-  ],
-  "Bot tokeni": [
-    "Токен бота",
-    "Bot token"
   ],
   "Sayt manzili": [
     "Адрес сайта",
@@ -799,14 +787,6 @@
     "Обновить",
     "Refresh"
   ],
-  "BotFather tokenini kiriting. Saqlashda token Telegram orqali tekshiriladi va bot avtomatik ulanadi.": [
-    "Введите токен BotFather. При сохранении он проверяется через Telegram, и бот подключается автоматически.",
-    "Enter your BotFather token. It is verified with Telegram and the bot connects automatically."
-  ],
-  "Saqlangan token ko‘rsatilmaydi. Bo‘sh qoldirsangiz mavjud token saqlanadi.": [
-    "Сохранённый токен не отображается. Оставьте поле пустым, чтобы его не менять.",
-    "The saved token is never shown. Leave this blank to keep it."
-  ],
   "Adminlar va huquqlarni boshqarish ↗": [
     "Администраторы и права доступа ↗",
     "Manage administrators and permissions ↗"
@@ -826,10 +806,6 @@
   "/admins — adminlar ro‘yxati": [
     "/admins — список администраторов",
     "/admins — administrator list"
-  ],
-  "/token — shu botning yangi tokenini kiritish": [
-    "/token — обновить токен этого бота",
-    "/token — update this bot’s token"
   ],
   "Bu buyruqlar faqat mavjud Telegram adminlarga ishlaydi. Adminlar alohida Adminlar bo‘limida boshqariladi.": [
     "Команды доступны администраторам с нужными правами. Управление аккаунтами — в разделе «Администраторы».",
@@ -907,10 +883,6 @@
     "Поделитесь телефоном из аккаунта администратора, отправьте /pdf, затем PDF как документ. Этот файл отправляется после подтверждения покупки.",
     "Share your phone from an authorized admin account, send /pdf, then upload the PDF as a document. This file is sent after purchase approval."
   ],
-  "Foydalanuvchilar ochadigan sayt manzilini Bot ulanishi bo‘limida sozlang. Token serverda shifrlangan holda saqlanadi.": [
-    "Укажите адрес сайта в разделе подключения бота. Токен хранится на сервере в зашифрованном виде.",
-    "Set your public website URL in Bot connection. Tokens are encrypted on the server."
-  ],
   "Telefonini ulashgan faol foydalanuvchilarga yuboriladi. Avval qoralama yarating, keyin tasdiqlang.": [
     "Рассылка активным пользователям, поделившимся телефоном. Сначала создайте черновик, затем подтвердите.",
     "Send to active users who shared their phone. Create a draft first, then confirm."
@@ -950,14 +922,6 @@
   "Telegram:": [
     "Telegram:",
     "Telegram:"
-  ],
-  "Token saqlangan. Almashtirish uchun yangisini kiriting.": [
-    "Токен сохранён. Введите новый для замены.",
-    "Token saved. Enter a new one to replace it."
-  ],
-  "BotFather bergan token": [
-    "Токен от BotFather",
-    "Token from BotFather"
   ],
   "Rad etish sababi (ixtiyoriy)": [
     "Причина отказа (необязательно)",
@@ -1014,10 +978,6 @@
   "(Matnsiz media)": [
     "(Медиа без текста)",
     "(Media without text)"
-  ],
-  "Bot ulanishi bo‘limida BotFather tokenini kiriting.": [
-    "Введите токен BotFather в разделе подключения бота.",
-    "Enter your BotFather token in Bot connection."
   ],
   "Saqlanmagan o‘zgarishlardan voz kechilsinmi?": [
     "Отменить несохранённые изменения?",
@@ -1090,5 +1050,69 @@
   "To‘lovni tasdiqlash": [
     "Подтвердить оплату",
     "Confirm payment"
+  ],
+  "Bot ulanmagan": [
+    "Бот не подключён",
+    "Bot disconnected"
+  ],
+  "Bot hozircha ulanmagan.": [
+    "Бот пока не подключён.",
+    "The bot is not connected yet."
+  ],
+  "Bot holati va sayt manzili": [
+    "Состояние бота и адрес сайта",
+    "Bot status and website URL"
+  ],
+  "Foydalanuvchilar ochadigan sayt manzilini Bot ulanishi bo‘limida sozlang.": [
+    "Укажите адрес сайта для пользователей в разделе подключения бота.",
+    "Set the public website URL in Bot connection."
+  ],
+  "Botni ishga tushirgan barcha faol foydalanuvchilarga Telegram orqali yuboriladi. Avval qoralama yarating, keyin tasdiqlang.": [
+    "Сообщение будет отправлено через Telegram всем активным пользователям бота. Сначала создайте черновик, затем подтвердите.",
+    "Sent via Telegram to all active bot users. Create a draft, then confirm."
+  ],
+  "Rasm yoki video": [
+    "Фото или видео",
+    "Photo or video"
+  ],
+  "JPG/PNG rasm: 10 MB gacha. MP4 video: 50 MB gacha. Media izohi: 1024 belgi.": [
+    "JPG/PNG: до 10 МБ. MP4: до 50 МБ. Подпись: до 1024 символов.",
+    "JPG/PNG: up to 10 MB. MP4: up to 50 MB. Caption: up to 1024 characters."
+  ],
+  "JPG/PNG rasm 10 MB, MP4 video 50 MB dan oshmasin.": [
+    "Фото JPG/PNG — до 10 МБ, видео MP4 — до 50 МБ.",
+    "JPG/PNG photos must be within 10 MB and MP4 videos within 50 MB."
+  ],
+  "Tanlangan rasm": [
+    "Выбранное фото",
+    "Selected photo"
+  ],
+  "Xabar rasmi": [
+    "Фото сообщения",
+    "Message photo"
+  ],
+  "Faylni olib tashlash": [
+    "Убрать файл",
+    "Remove file"
+  ],
+  "Media izohi 1024 belgidan oshmasin.": [
+    "Подпись не должна превышать 1024 символа.",
+    "Caption must not exceed 1024 characters."
+  ],
+  "Bajarilmoqda…": [
+    "Выполняется…",
+    "Working…"
+  ],
+  "Yuborish tugadi": [
+    "Отправка завершена",
+    "Sending complete"
+  ],
+  "Ushbu xabar botdagi barcha faol foydalanuvchilarga Telegram orqali yuborilsinmi?": [
+    "Отправить это сообщение всем активным пользователям бота через Telegram?",
+    "Send this message via Telegram to all active bot users?"
+  ],
+  "Tayyor Telegram postini yuborish uchun botga /broadcast yuboring, keyin postni jo‘nating. Qoralama quyidagi ro‘yxatda paydo bo‘ladi.": [
+    "Для готового поста отправьте боту /broadcast, затем сам пост. Черновик появится ниже.",
+    "For an existing Telegram post, send /broadcast to the bot, then send the post. The draft will appear below."
   ]
 }

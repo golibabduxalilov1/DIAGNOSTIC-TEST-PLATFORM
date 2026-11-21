@@ -1,0 +1,21 @@
+{
+  "name": "stepone",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.cjs",
+    "dev": "node scripts/run.cjs dev",
+    "build": "npm --prefix api run build && npm --prefix web run build",
+    "start": "node scripts/run.cjs start",
+    "test": "npm --prefix api test",
+    "check:production": "npm --prefix api run build && node api/scripts/check-production.cjs",
+    "check:web-security": "node scripts/check-web-security.cjs",
+    "db:start": "node scripts/postgres.cjs",
+    "db:stop": "node scripts/postgres.cjs stop",
+    "db:migrate": "npm --prefix api run db:migrate",
+    "db:import": "npm --prefix api run db:import --",
+    "check:access": "npm --prefix api run check:access"
+  }
+}

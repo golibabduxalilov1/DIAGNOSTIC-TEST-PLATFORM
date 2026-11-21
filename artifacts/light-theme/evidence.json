@@ -1,0 +1,67 @@
+{
+  "contract": "Diagnostic quiz and repeated-use admin workspace. Preserve existing layout and dark mode. Light surfaces: neutral canvas, white panels, cobalt primary actions; green success, amber pending, red errors. Check 1440x900 desktop and 390x844 mobile. Local seed fixtures only; no backend writes.",
+  "targetViewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Measured text/canvas 13.47:1, secondary text/white 5.76:1, white/cobalt button 6.05:1, success 5.17:1, warning 5.92:1, error 5.71:1. Back button focus renders cobalt 2px outline. Selected answer confirmed after answering and returning. Existing touch-target and reduced-motion rules retained."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Inspected desktop admin overview, narrow admin editor at browser minimum 500px, and emulated 390px quiz. No document horizontal overflow. Existing scrolling question list stays inside its panel."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "pass",
+      "evidence": "Presentation-only loading fixture rendered using existing UI classes in semantic-states.jpg. Computed foreground/background inspected; business workflows outside this color-only change were not exercised."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "Presentation-only empty fixture rendered using existing UI classes in semantic-states.jpg. Computed foreground/background inspected; business workflows outside this color-only change were not exercised."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Presentation-only error fixture rendered using existing UI classes in semantic-states.jpg. Computed foreground/background inspected; business workflows outside this color-only change were not exercised."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "Presentation-only partial fixture rendered using existing UI classes in semantic-states.jpg. Computed foreground/background inspected; business workflows outside this color-only change were not exercised."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Presentation-only success fixture rendered using existing UI classes in semantic-states.jpg. Computed foreground/background inspected; business workflows outside this color-only change were not exercised."
+    },
+    "permission": {
+      "status": "pass",
+      "evidence": "Presentation-only permission fixture rendered using existing UI classes in semantic-states.jpg. Computed foreground/background inspected; business workflows outside this color-only change were not exercised."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x900",
+      "artifact": "admin-desktop.png",
+      "observation": "Mock admin overview: white sidebar/cards, neutral canvas, blue active navigation and soft blue welcome panel."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "quiz-mobile.jpg",
+      "observation": "Mock quiz question: readable text, white answer surfaces, distinct answer outlines, contained layout."
+    },
+    {
+      "viewport": "500x844",
+      "artifact": "admin-mobile-500.jpg",
+      "observation": "Mock admin question editor: neutral fields, blue selected question, horizontally contained list."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "semantic-states.jpg",
+      "observation": "Temporary browser-only state samples verify loading/empty text, error, partial information note, success, pending warning, and checked permission."
+    }
+  ],
+  "validation": {
+    "build": "Isolated copy: Next.js 16.4.6 production build with webpack passed including TypeScript. In-place build blocked by running production server lock. Existing server on 3000 preserved.",
+    "limitations": "Fixtures replace fetch only in the test browser. No real Telegram integration, authentication, database writes, or permission enforcement tested."
+  }
+}
