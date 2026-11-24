@@ -146,10 +146,11 @@ async function bootstrap() {
     const attempts = new RateLimiter();
     let activeUploads = 0;
     class BroadcastUploadGuard {
+      permission: Permission = "bot.broadcasts";
       async canActivate(context: ExecutionContext) {
         const req = context.switchToHttp().getRequest<Request>();
         origin(req);
-        await auth(req, "bot.broadcasts");
+        await auth(req, this.permission);
         throttle(req, 10, "broadcast-upload");
         if (activeUploads >= 2) fail(429, "Fayl yuklanmoqda. Biroz kuting.");
         activeUploads++;
@@ -160,6 +161,9 @@ async function bootstrap() {
         res.once("close", release);
         return true;
       }
+    }
+    class ProfileUploadGuard extends BroadcastUploadGuard {
+      permission: Permission = "bot.settings";
     }
     function throttle(req: Request, limit: number, prefix: string) {
       if (!attempts.consume(prefix + ":" + req.ip, limit))
@@ -205,6 +209,29 @@ async function bootstrap() {
         origin(req);
         await auth(req, "bot.settings");
         return botAction(async () => await telegram.saveSettings(body));
+      }
+      @Get("admin/telegram/profile") async botProfile(@Req() req: Request) {
+        await auth(req, "bot.settings");
+        throttle(req, 20, "bot-profile-read");
+        return botAction(() => telegram.profile());
+      }
+      @Put("admin/telegram/profile") async botProfileSave(@Req() req: Request, @Body() body: any) {
+        origin(req);
+        await auth(req, "bot.settings");
+        throttle(req, 10, "bot-profile-write");
+        return botAction(() => telegram.saveProfile(body));
+      }
+      @Post("admin/telegram/profile/photo")
+      @UseGuards(ProfileUploadGuard)
+      @UseInterceptors(FileInterceptor("photo", { limits: { fileSize: 10 * 1024 * 1024, files: 1, fields: 0 } }))
+      botProfilePhoto(@UploadedFile() file?: BroadcastUpload) {
+        return botAction(() => telegram.setProfilePhoto(file));
+      }
+      @Post("admin/telegram/profile/photo/remove") async botProfilePhotoRemove(@Req() req: Request) {
+        origin(req);
+        await auth(req, "bot.settings");
+        throttle(req, 10, "bot-profile-write");
+        return botAction(() => telegram.removeProfilePhoto());
       }
       @Post("admin/telegram/orders/:id/review") async botReview(
         @Req() req: Request,

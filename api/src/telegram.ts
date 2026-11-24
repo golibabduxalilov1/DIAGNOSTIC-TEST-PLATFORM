@@ -197,6 +197,49 @@ export class TelegramService {
       ...JSON.parse((await this.meta("settings")) || "{}"),
     };
   }
+  private requireBot() {
+    if (!this.token) throw new InputError("Avval botni serverda ulang.");
+  }
+  async profile() {
+    this.requireBot();
+    const [name, description, short] = await Promise.all([
+      this.transport("getMyName", {}),
+      this.transport("getMyDescription", {}),
+      this.transport("getMyShortDescription", {}),
+    ]);
+    return { name: name.name, description: description.description, shortDescription: short.short_description };
+  }
+  async saveProfile(input: any) {
+    this.requireBot();
+    const fields = {
+      name: { method: "setMyName", parameter: "name", max: 64 },
+      description: { method: "setMyDescription", parameter: "description", max: 512 },
+      shortDescription: { method: "setMyShortDescription", parameter: "short_description", max: 120 },
+    };
+    if (!input || !Object.prototype.hasOwnProperty.call(fields, input.field) || typeof input.value !== "string")
+      throw new InputError("Bot profili maydonini tekshiring.");
+    const field = fields[input.field as keyof typeof fields];
+    const value = input.value.trim();
+    if (Array.from(value).length > field.max || (input.field === "name" && !value))
+      throw new InputError(`Bu maydon ${field.max} belgidan oshmasin. Bot nomi bo‘sh bo‘lmasin.`);
+    await this.transport(field.method, { [field.parameter]: value });
+    return { ok: true };
+  }
+  async setProfilePhoto(file?: BroadcastUpload) {
+    this.requireBot();
+    if (!file || file.mimetype !== "image/jpeg") throw new InputError("JPG rasm tanlang (10 MB gacha).");
+    validateBroadcastMedia(file);
+    await this.transport("setMyProfilePhoto", {
+      photo: { type: "static", photo: "attach://profile_photo" },
+      profile_photo: new Blob([new Uint8Array(file.buffer)], { type: "image/jpeg" }),
+    });
+    return { ok: true };
+  }
+  async removeProfilePhoto() {
+    this.requireBot();
+    await this.transport("removeMyProfilePhoto", {});
+    return { ok: true };
+  }
   async saveSettings(input: any) {
     if (
       !input ||

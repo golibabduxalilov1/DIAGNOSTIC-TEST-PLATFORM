@@ -96,10 +96,24 @@ const { once } = require("node:events");
     for (const [path, method] of [
       ["/admin/telegram/connection", "PUT"],
       ["/admin/telegram/settings", "PUT"],
+      ["/admin/telegram/profile", "GET"],
+      ["/admin/telegram/profile", "PUT"],
+      ["/admin/telegram/profile/photo", "POST"],
+      ["/admin/telegram/profile/photo/remove", "POST"],
       ["/admin/telegram/broadcasts", "POST"],
       ["/admin/accounts", "POST"],
     ])
-      assert.equal((await request(path, op, method, {})).status, 403, path);
+      assert.equal((await request(path, op, method, method === "GET" ? undefined : {})).status, 403, path);
+    for (const [path, method] of [
+      ["/admin/telegram/profile", "GET"],
+      ["/admin/telegram/profile", "PUT"],
+      ["/admin/telegram/profile/photo", "POST"],
+      ["/admin/telegram/profile/photo/remove", "POST"],
+    ]) {
+      const body = method === "GET" ? undefined : {};
+      assert.equal((await request(path, null, method, body)).status, 401, path);
+      assert.equal((await request(path, owner, method, body)).status, 400, path);
+    }
     database = testDatabase.pool;
     await database.query(
       "INSERT INTO tg_users(id,name,phone,created) VALUES($1,$2,$3,$4)",
