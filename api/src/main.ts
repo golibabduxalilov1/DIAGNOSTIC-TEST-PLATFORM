@@ -31,6 +31,7 @@ import { normalizePhone } from "./phone";
 import { allowedOrigin } from "./origin";
 import { clientError, RateLimiter, limitAccount, securityMiddleware, readLimitedFile } from "./security";
 import { TelegramService } from "./telegram";
+import { maximumScore } from "./result-message";
 import {
   AdminService,
   requirePermission,
@@ -41,7 +42,10 @@ async function bootstrap() {
   env({ path: resolve(__dirname, "../.env") });
   const password = process.env.ADMIN_PASSWORD,
     secret = process.env.SESSION_SECRET;
-  const minimumPassword = process.env.NODE_ENV === "production" ? 12 : 8;
+  const configuredMinimum = process.env.ADMIN_PASSWORD_MIN_LENGTH;
+  if (configuredMinimum !== undefined && !["8", "12"].includes(configuredMinimum))
+    throw Error("ADMIN_PASSWORD_MIN_LENGTH faqat 8 yoki 12 bo‘lishi mumkin.");
+  const minimumPassword = configuredMinimum === "8" ? 8 : process.env.NODE_ENV === "production" ? 12 : 8;
   if (!password || password.length < minimumPassword || password.length > 200 || !secret || secret.length < 32 ||
       /^(replace-with|change-?me|password)/i.test(password) || /^(replace-with|change-?me)/i.test(secret))
     throw Error(`api/.env: ADMIN_PASSWORD (${minimumPassword}–200), SESSION_SECRET (32+) tasodifiy qiymatlar kerak.`);
@@ -322,13 +326,14 @@ async function bootstrap() {
         }
         const id = randomBytes(12).toString("hex");
         await db
-          .prepare("INSERT INTO results VALUES($1,$2,$3,$4,$5)")
+          .prepare("INSERT INTO results(id,created,score,category,version,max_score) VALUES($1,$2,$3,$4,$5,$6)")
           .run(
             id,
             new Date().toISOString(),
             result!.score,
             result!.category,
             c.version,
+            maximumScore(c),
           );
         const localized = localizeConfig(c, body.language);
         return {

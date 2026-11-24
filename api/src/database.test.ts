@@ -36,7 +36,7 @@ test("PostgreSQL migrations are repeatable and transactions isolate concurrent r
   );
   assert.equal(
     (await db.prepare("SELECT COUNT(*) n FROM schema_migrations").get()).n,
-    2,
+    3,
   );
 });
 

@@ -5,6 +5,7 @@ import { normalizePhone } from "./phone";
 import { parseAdminIds, validSiteUrl } from "./bot-credentials";
 import type { Permission } from "./admins";
 import { BroadcastUpload, validateBroadcastMedia } from "./broadcast-media";
+import { resultMessage } from "./result-message";
 type AccessBridge = {
   permissions: (id: number) => Promise<Permission[]>;
   ids: () => Promise<number[]>;
@@ -296,14 +297,25 @@ export class TelegramService {
       await this.db
         .prepare("INSERT INTO tg_claims VALUES($1,$2) ON CONFLICT DO NOTHING")
         .run(id, user.id);
-      await this.say(
-        user.id,
-        `Test natijangiz: ${result.score} ball.\nYo‘nalish: ${result.category}`,
-      );
+      await this.sendResult(user.id, result);
     }
     await this.db
       .prepare("UPDATE tg_users SET pending_result=NULL WHERE id=$1")
       .run(user.id);
+    return !!result && (!owner || owner.user_id === user.id);
+  }
+  private async sendResult(id: number, result: { score: number; max_score: number | null }) {
+    await this.queue(id, "sendMessage", {
+      text: resultMessage(result.score, result.max_score),
+      parse_mode: "HTML",
+      reply_markup: {
+        keyboard: [
+          [{ text: "📄 PDF kundalik" }, { text: "📔 Bosma kundalik" }],
+          [{ text: "🏠 Menyu" }],
+        ],
+        resize_keyboard: true,
+      },
+    });
   }
   async handleUpdate(update: any) {
     if (!Number.isSafeInteger(update?.update_id)) return;
@@ -355,8 +367,8 @@ export class TelegramService {
         await this.requirePhone(id);
         return;
       }
-      await this.claim(user);
-      await this.menu(id, "Xush kelibsiz! Bo‘limni tanlang:");
+      if (!(await this.claim(user)))
+        await this.menu(id, "Xush kelibsiz! Bo‘limni tanlang:");
       return;
     }
     if (m.contact) {
@@ -372,8 +384,8 @@ export class TelegramService {
       await this.db
         .prepare("UPDATE tg_users SET phone=$1 WHERE id=$2")
         .run("+" + phone, id);
-      await this.claim(user);
-      await this.menu(id, "Telefon raqamingiz saqlandi.");
+      if (!(await this.claim(user)))
+        await this.menu(id, "Telefon raqamingiz saqlandi.");
       return;
     }
     if (!user.phone) {
@@ -583,19 +595,16 @@ export class TelegramService {
     if (text === "📊 Natijam") {
       const rows = (await this.db
         .prepare(
-          "SELECT r.* FROM results r JOIN tg_claims c ON c.result_id=r.id WHERE c.user_id=$1 ORDER BY r.created DESC LIMIT 5",
+          "SELECT r.* FROM results r JOIN tg_claims c ON c.result_id=r.id WHERE c.user_id=$1 ORDER BY r.created DESC LIMIT 1",
         )
         .all(id)) as any[];
+      if (rows.length) {
+        await this.sendResult(id, rows[0]);
+        return;
+      }
       await this.say(
         id,
-        rows.length
-          ? rows
-              .map(
-                (r) =>
-                  `${new Date(r.created).toLocaleDateString("uz-UZ", { timeZone: "Asia/Tashkent" })}: ${r.score} ball — ${r.category}`,
-              )
-              .join("\n")
-          : "Hali natija yo‘q. Saytda testni tugatib, “Natijani Telegram’da olish” tugmasini bosing.",
+        "Hali natija yo‘q. Saytda testni tugatib, “Natijani Telegram’da olish” tugmasini bosing.",
       );
       return;
     }

@@ -144,6 +144,26 @@ test("tampered score links cannot create or claim a result", async () => {
     0,
   );
 });
+
+test("claimed results show percentage sales copy and purchase buttons immediately", async () => {
+  const { db, bot, message, configure, register } = await setup();
+  await configure();
+  await register(2);
+  for (const [index, score, icon] of [[0,44,"🔴"],[1,45,"🟡"],[2,75,"🟢"]] as const) {
+    const result = String(index).repeat(24);
+    await db.prepare("INSERT INTO results(id,created,score,category,version,max_score) VALUES($1,$2,$3,$4,$5,$6)")
+      .run(result, new Date().toISOString(), score, "vaqt", 1, 100);
+    await message(2, { text: "/start r_" + result });
+    const last = await db.prepare("SELECT payload FROM tg_outbox WHERE chat_id=2 ORDER BY id DESC LIMIT 1").get();
+    const payload = JSON.parse(last.payload);
+    assert.ok(payload.text.includes(`${score}%`));
+    assert.ok(payload.text.includes(icon));
+    assert.equal(payload.parse_mode, "HTML");
+    assert.deepEqual(payload.reply_markup.keyboard[0], [{ text: "📄 PDF kundalik" }, { text: "📔 Bosma kundalik" }]);
+  }
+  await message(2, { text: "📄 PDF kundalik" });
+  assert.equal((await db.prepare("SELECT kind FROM tg_orders WHERE user_id=2").get()).kind, "pdf");
+});
 test("PDF delivery requires a receipt and admin approval; approval is atomic and cannot be repeated", async () => {
   const { db, bot, message, register, configure, order, sent } = await setup();
   await configure();
