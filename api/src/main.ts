@@ -31,7 +31,7 @@ import { normalizePhone } from "./phone";
 import { allowedOrigin } from "./origin";
 import { clientError, RateLimiter, limitAccount, securityMiddleware, readLimitedFile } from "./security";
 import { TelegramService } from "./telegram";
-import { maximumScore } from "./result-message";
+import { defaultResultMessages, maximumScore } from "./result-message";
 import {
   AdminService,
   requirePermission,
@@ -77,6 +77,7 @@ async function bootstrap() {
       ) as Config;
       if (c.locales === undefined && c.title === seedConfig.title)
         c.locales = seedConfig.locales;
+      c.resultMessages ??= { ...defaultResultMessages };
       return c;
     };
     const admins = await AdminService.create(db, phone, password);
@@ -293,7 +294,7 @@ async function bootstrap() {
       )
       botDraft(@Body() body: any, @UploadedFile() file?: BroadcastUpload) {
         return botAction(
-          async () => await telegram.createBroadcast(body?.text ?? "", file),
+          async () => await telegram.createBroadcast(body?.text ?? "", file, body?.parseMode),
         );
       }
       @Get("admin/telegram/broadcasts/:id/media") async botMedia(
@@ -328,7 +329,7 @@ async function bootstrap() {
       }
       @Get("quiz") async quiz(@Query("lang") lang: string) {
         const c = localizeConfig(await getConfig(), lang);
-        const { locales, ...publicConfig } = c;
+        const { locales, resultMessages, ...publicConfig } = c;
         return {
           ...publicConfig,
           questions: c.questions.map((q) => ({

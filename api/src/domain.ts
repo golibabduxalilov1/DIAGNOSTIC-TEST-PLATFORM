@@ -1,17 +1,26 @@
 import { InputError } from "./security";
+import { telegramHtmlError } from "./telegram-format";
 export type Option = { id:string; text:string; score:number; key?:string };
 export type Question = { id:string; type:'scored'|'category'; text:string; options:Option[] };
 export type Translation={title?:string;description?:string;finishTitle?:string;finishDescription?:string;questions?:Record<string,{text?:string;options?:Record<string,string>}>};
-export type Config = { version:number; brand:string;brandTagline?:string;footerText?:string;appearance?:{theme:'dark'|'light'|'system';compact:boolean;largeText:boolean}; title:string; description:string; minutes:number; botUsername:string; finishTitle:string; finishDescription:string; questions:Question[];locales?:{ru?:Translation;en?:Translation} };
+export type Config = { resultMessages?:{low:string;medium:string;good:string};version:number; brand:string;brandTagline?:string;footerText?:string;appearance?:{theme:'dark'|'light'|'system';compact:boolean;largeText:boolean}; title:string; description:string; minutes:number; botUsername:string; finishTitle:string; finishDescription:string; questions:Question[];locales?:{ru?:Translation;en?:Translation} };
 export function validate(c:Config) {
   const record=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
   const known=(v:unknown,keys:string[])=>record(v)&&Object.keys(v).every(k=>keys.includes(k));
   const id=(v:unknown)=>typeof v==='string'&&v.trim().length>0&&v.length<=80&&!['__proto__','prototype','constructor'].includes(v);
-  if(!known(c,['version','brand','brandTagline','footerText','appearance','title','description','minutes','botUsername','finishTitle','finishDescription','questions','locales']))throw new InputError('Sozlama maydonlari noto‘g‘ri.');
+  if(!known(c,['resultMessages','version','brand','brandTagline','footerText','appearance','title','description','minutes','botUsername','finishTitle','finishDescription','questions','locales']))throw new InputError('Sozlama maydonlari noto‘g‘ri.');
   const str=(v:unknown,max=2000)=>typeof v==='string'&&v.trim().length>0&&v.length<=max;
   if (!c || !Number.isInteger(c.version)|| !['brand','title','description','finishTitle','finishDescription'].every(k=>str(c[k as keyof Config])) || !Number.isInteger(c.minutes)||c.minutes<1||c.minutes>120 || typeof c.botUsername!=='string'|| !/^[A-Za-z0-9_]{0,32}$/.test(c.botUsername) || !Array.isArray(c.questions)||c.questions.length<1||c.questions.length>100) throw new InputError('Sozlamalar noto‘g‘ri. Matnlar, vaqt va savollarni tekshiring.');
   for(const key of ['brandTagline','footerText'] as const)if(c[key]!==undefined&&(typeof c[key]!=='string'||c[key]!.length>200))throw new InputError('Brend matni 200 belgidan oshmasin.');
   if(c.appearance!==undefined){const a=c.appearance;if(!a||typeof a!=='object'||Array.isArray(a)||Object.keys(a).some(k=>!['theme','compact','largeText'].includes(k))||!['dark','light','system'].includes(a.theme)||typeof a.compact!=='boolean'||typeof a.largeText!=='boolean')throw new InputError('Ko‘rinish sozlamalari noto‘g‘ri.');}
+  if(c.resultMessages!==undefined){
+    if(!known(c.resultMessages,['low','medium','good']))throw new InputError('Natija matnlari noto‘g‘ri.');
+    for(const key of ['low','medium','good'] as const){
+      const value=c.resultMessages[key];
+      if(typeof value!=='string')throw new InputError('Uchala natija matnini kiriting.');
+      const error=telegramHtmlError(value);if(error)throw new InputError(error);
+    }
+  }
   const ids=new Set<string>(); let categories=0;
   for (const q of c.questions) {
     if(!known(q,['id','type','text','options'])||!id(q.id))throw new InputError('Savol maydonlari noto‘g‘ri.');

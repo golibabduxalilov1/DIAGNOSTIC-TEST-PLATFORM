@@ -5,11 +5,11 @@ export function maximumScore(config: Config) {
     .reduce((sum, q) => sum + Math.max(...q.options.map(o => o.score)), 0);
 }
 
-export function resultMessage(score: number, maxScore: number | null) {
+export function resultMessage(score: number, maxScore: number | null, messages?: Config['resultMessages']) {
   if (!maxScore || !Number.isFinite(score))
     return `Test natijangiz: ${score} ball.\nFoizli tahlil uchun testni qayta topshiring.\n\nO'zgarish kundaligiga buyurtma berish uchun quyidagi tugmani bosing.`;
   const percent = Math.max(0, Math.min(100, Math.round(score / maxScore * 100)));
-  const text = percent >= 75 ? good : percent >= 45 ? medium : low;
+  const text = percent >= 75 ? messages?.good ?? good : percent >= 45 ? messages?.medium ?? medium : messages?.low ?? low;
   const label = percent >= 75 ? "Intizomingiz yaxshi" : percent >= 45
     ? "Intizomni kuchaytirish kerak" : "O'zgarishni boshlash vaqti keldi";
   return `<b>Natijangiz: ${percent}% — ${label}</b>\n\n${text}`;
@@ -67,3 +67,5 @@ U sizga:
 Sizga murakkab rejalar kerak emas. Sizga har kuni amal qilinadigan oddiy tizim kerak.
 <b>Hayotingiz o'z-o'zidan o'zgarmaydi. O'zgarish bugungi qaroringizdan boshlanadi!</b>
 Quyidagi tugmani bosing va O'zgarish kundaligiga buyurtma bering.`;
+
+export const defaultResultMessages = { low, medium, good };

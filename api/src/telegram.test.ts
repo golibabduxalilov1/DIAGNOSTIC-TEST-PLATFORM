@@ -164,6 +164,27 @@ test("claimed results show percentage sales copy and purchase buttons immediatel
   await message(2, { text: "📄 PDF kundalik" });
   assert.equal((await db.prepare("SELECT kind FROM tg_orders WHERE user_id=2").get()).kind, "pdf");
 });
+test("saved result copy is read on each result and HTML broadcasts retain formatting", async () => {
+  const {db,bot,message,register}=await setup();
+  await register(2);
+  await db.prepare("INSERT INTO config(id,json) VALUES(1,$1)").run(JSON.stringify({resultMessages:{low:'<b>Past</b>',medium:'<i>O‘rta</i>',good:'<u>Yangi matn</u>'}}));
+  const result='f'.repeat(24);
+  await db.prepare("INSERT INTO results(id,created,score,category,version,max_score) VALUES($1,$2,55,'vaqt',1,55)").run(result,new Date().toISOString());
+  await message(2,{text:'/start r_'+result});
+  let payload=JSON.parse((await db.prepare("SELECT payload FROM tg_outbox WHERE chat_id=2 ORDER BY id DESC LIMIT 1").get()).payload);
+  assert.ok(payload.text.includes('<u>Yangi matn</u>'));
+  await db.prepare("UPDATE config SET json=$1 WHERE id=1").run(JSON.stringify({resultMessages:{good:'<b>O‘zgardi</b>'}}));
+  await message(2,{text:'📊 Natijam'});
+  payload=JSON.parse((await db.prepare("SELECT payload FROM tg_outbox WHERE chat_id=2 ORDER BY id DESC LIMIT 1").get()).payload);
+  assert.ok(payload.text.includes('<b>O‘zgardi</b>'));
+  const draft=await bot.createBroadcast('<b>Yangilik</b>',undefined,'HTML');
+  await bot.broadcast(draft.id);
+  payload=JSON.parse((await db.prepare("SELECT payload FROM tg_outbox WHERE broadcast_id=$1").get(draft.id)).payload);
+  assert.equal(payload.parse_mode,'HTML');
+  assert.equal(payload.text,'<b>Yangilik</b>');
+  await assert.rejects(()=>bot.createBroadcast('<b>ochiq',undefined,'HTML'));
+});
+
 test("PDF delivery requires a receipt and admin approval; approval is atomic and cannot be repeated", async () => {
   const { db, bot, message, register, configure, order, sent } = await setup();
   await configure();

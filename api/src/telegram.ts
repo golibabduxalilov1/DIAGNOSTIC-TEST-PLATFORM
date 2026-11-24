@@ -6,6 +6,7 @@ import { parseAdminIds, validSiteUrl } from "./bot-credentials";
 import type { Permission } from "./admins";
 import { BroadcastUpload, validateBroadcastMedia } from "./broadcast-media";
 import { resultMessage } from "./result-message";
+import { telegramHtmlError } from "./telegram-format";
 type AccessBridge = {
   permissions: (id: number) => Promise<Permission[]>;
   ids: () => Promise<number[]>;
@@ -348,8 +349,10 @@ export class TelegramService {
     return !!result && (!owner || owner.user_id === user.id);
   }
   private async sendResult(id: number, result: { score: number; max_score: number | null }) {
+    const config = await this.db.prepare("SELECT json FROM config WHERE id=1").get();
+    const messages = config ? JSON.parse(config.json).resultMessages : undefined;
     await this.queue(id, "sendMessage", {
-      text: resultMessage(result.score, result.max_score),
+      text: resultMessage(result.score, result.max_score, messages),
       parse_mode: "HTML",
       reply_markup: {
         keyboard: [
@@ -909,7 +912,7 @@ export class TelegramService {
       return { ok: true };
     });
   }
-  async createBroadcast(text: string, file?: BroadcastUpload) {
+  async createBroadcast(text: string, file?: BroadcastUpload, parseMode?: string) {
     const kind = file ? validateBroadcastMedia(file) : "text",
       limit = file ? 1024 : 4000;
     if (
@@ -922,13 +925,18 @@ export class TelegramService {
           ? "Media izohi 1024 belgidan oshmasin."
           : "Xabar 1–4000 belgi bo‘lsin.",
       );
+    if (parseMode !== undefined && parseMode !== "HTML") throw new InputError("Xabar formati noto‘g‘ri.");
+    if (parseMode && text.trim()) {
+      const error = telegramHtmlError(text, limit);
+      if (error) throw new InputError(error);
+    }
     const id = randomBytes(12).toString("hex");
     return await this.atomic(async () => {
       await this.db
         .prepare(
-          "INSERT INTO tg_broadcasts(id,text,kind,created) VALUES($1,$2,$3,$4)",
+          "INSERT INTO tg_broadcasts(id,text,kind,created,parse_mode) VALUES($1,$2,$3,$4,$5)",
         )
-        .run(id, text.trim(), kind, new Date().toISOString());
+        .run(id, text.trim(), kind, new Date().toISOString(), parseMode || null);
       if (file)
         await this.db
           .prepare(
@@ -979,9 +987,10 @@ export class TelegramService {
             : media
               ? {
                   caption: b.text,
+                  ...(b.parse_mode ? { parse_mode: b.parse_mode } : {}),
                   ...(b.kind === "video" ? { supports_streaming: true } : {}),
                 }
-              : { text: b.text },
+              : { text: b.text, ...(b.parse_mode ? { parse_mode: b.parse_mode } : {}) },
           id,
         );
       await this.db
